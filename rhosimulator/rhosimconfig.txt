@@ -1,7 +1,7 @@
 rhodes_path='/Library/Ruby/Gems/1.8/gems/rhodes-3.3.3'
 app_version='1.0'
 app_name='poc'
-reload_app_changes=0
+reload_app_changes=1
 debug_port=
 debug_host='127.0.0.1'
 platform='iphone'

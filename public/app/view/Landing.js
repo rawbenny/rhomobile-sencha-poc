@@ -19,7 +19,7 @@ Ext.define("poc.view.Landing", {
 			id: 'launchscreen',
 			// width : '100%',
 			// height : '100%',
-			scrollable : true,
+			scrollable : false,
 			flex : 1,
 			defaults : {
 				styleHtmlContent : true
