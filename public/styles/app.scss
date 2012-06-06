@@ -190,3 +190,131 @@ $body-bg-color: lighten($base-color,50%);
 .x-list-item-label{
   border-style:none;
 }
+
+.x-html ul {
+  display: inline;
+  text-align: center;
+}
+
+/* line 52, ../../styles/app.scss */
+.x-html ul li {
+  display: block;
+  float: left;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 20px;
+  width: 25%;
+  height: 180px;
+}
+/* line 63, ../../styles/app.scss */
+.x-html .file-stack {
+  background-image: url(../images/FileIcon01.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-left: 10%;
+  margin-right: 10%;
+  position: relative;
+}
+/* line 71, ../../styles/app.scss */
+.x-html .unknown-file {
+  background-image: url(../images/UnknownFile.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 130px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 20px;
+  width: 80%;
+}
+/* line 82, ../../styles/app.scss */
+.x-html .xlsx, .x-html .excel, .x-html .xls {
+  background-image: url("../images/ExcelIcon01.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 130px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 20px;
+  width: 80%;
+}
+/* line 92, ../../styles/app.scss */
+.x-html .pdf {
+  background-image: url("../images/PDFIcon01.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 130px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 20px;
+  width: 80%;
+}
+/* line 102, ../../styles/app.scss */
+.x-html .docx, .x-html .doc, .x-html .word {
+  background-image: url("../images/WordIcon01.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 130px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 20px;
+  width: 80%;
+}
+/* line 112, ../../styles/app.scss */
+.x-html .pptx, .x-html .ppt, .x-html .powerpoint, .x-html .pps {
+  background-image: url("../images/PowerPointIcon01.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 130px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 20px;
+  width: 80%;
+}
+/* line 122, ../../styles/app.scss */
+.x-html .gif, .x-html .png, .x-html .jpg, .x-html .psd, .x-html .max, .x-html .bmp, .x-html .tif, .x-html .svg {
+  background-image: url("../images/ImageIcon01.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 130px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 20px;
+  width: 80%;
+}
+/* line 132, ../../styles/app.scss */
+.x-html .txt, .x-html .rtf, .x-html .log {
+  background-image: url("../images/TextIcon01.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 130px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 20px;
+  width: 80%;
+}
+/* line 142, ../../styles/app.scss */
+.x-html .asf, .x-html .asx, .x-html .avi, .x-html .flv, .x-html .mov, .x-html .mp4, .x-html .mpg, .x-html .rm, .x-html .swf, .x-html .vob, .x-html .wmv {
+  background-image: url("../images/VideoIcon01.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 130px;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 20px;
+  width: 80%;
+}
+/* line 152, ../../styles/app.scss */
+.x-html .file-name {
+  color: #eea259;
+  height: 50px;
+  margin: 0 auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+/* line 162, ../../styles/app.scss */
+.x-html .file-wrap {
+  position: relative;
+}
