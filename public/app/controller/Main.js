@@ -127,15 +127,6 @@ Ext.define('poc.controller.Main', {
 		} else {
 			nav.setWidth(0);
 		}
-		
-		// console.info(nav.getCls());
-		// Ext.Anim.run(nav,'slide',{
-		// out:true,
-		// autoClear:false,
-		// duration:2000,
-		// from:"left:0px",
-		// to:'left:-250px'
-		// })
 	}
 });
 
