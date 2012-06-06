@@ -60,57 +60,111 @@ Ext.application({
 var pathArray = new Array();
 
 var reloadFileList = function(filePath, page) {
-	if (page) {
+		if (page) {
 			page.setMasked( {
 				xtype: 'loadmask',
 				message: 'Loading...'
 			});
 			page.mask();
 		}
-	
-	var tpl = new Ext.XTemplate([
-			"<div id='file-list'>",
-				"<ul class='file-list-ul'>",
-					'<tpl for=".">',
-						"<li>",
-						"	<div class='file-wrap'>",
-						"		<div class='file-stack'>",
-						"			<div class='flag-general'></div>",
-						"			<div class='unknown-file {[values.Name.indexOf('.') > -1? values.Name.split('.')[values.Name.split('.').length -1].toLowerCase():'nil' ]}'>",
-						"			</div>",
-						"		</div>",
-						"		<div class='file-name-wrap'>",
-						"			<div class='file-name'>{Name}</div>",
-						"		</div>",
-						"	</div>",
-						"</li>",
-					'</tpl>',
-				"</ul>",
-			"</div>"
-	]);
-	Ext.Ajax.request({
-		url : '/app/Document/files',
-		params : {
-			node : filePath
-		},
-		success : function(response) {
-			var text = response.responseText;
-			result = Ext.decode(text);
-			var launchscreen = Ext.getCmp('launchscreen');
-			var results = result.d.results;
 
-			if(results) {
-				launchscreen.updateHtml(tpl.applyTemplate(results));
+		var tpl2 = new Ext.XTemplate(["<div id='file-list'>",
+			"<ul class='file-list-ul'>",
+			"<li>",
+			"	<div class='file-wrap'>",
+			"		<div class='file-stack'>",
+			"			<div class='flag-general'></div>",
+			"			<div class='unknown-file {[values.Name.indexOf('.') > -1? values.Name.split('.')[values.Name.split('.').length -1].toLowerCase():'nil' ]}'>",
+			"			</div>",
+			"		</div>",
+			"		<div class='file-name-wrap'>",
+			"			<div class='file-name'>{Name}</div>",
+			"		</div>",
+			"	</div>",
+			"</li>",
+			"</ul>",
+			"</div>"]);
+		Ext.Ajax.request( {
+			url: '/app/Document/files',
+			params: {
+				node: filePath
+			},
+			success: function(response) {
+				var text = response.responseText;
+				result = Ext.decode(text);
+
+				var launchscreen = Ext.getCmp('launchscreen');
+
+				var results = result.d.results;
+
+				var html = '';
+				
+				var MAX_ITEM_NUM = 12;
+				
+				var tabNum = launchscreen.innerItems.length;
+				//cleanup existing items tabs
+				launchscreen.removeAll();
+				
+				var newPanel = Ext.create('Ext.Panel', {
+						html: 'Retrieving file list..'
+					});
+
+				launchscreen.add([newPanel]);
+				
+				launchscreen.setActiveItem(0);
+				
+				console.log(results);
+				
+                var actItem = launchscreen.getActiveItem();
+                
+				if (results && (results.length > 0)) {
+
+					var tmpResult = new Array();
+					
+					var k = 2;
+					
+					for (var i = 0; i < results.length; i++) {
+						//variable for build new item
+
+						if ( (i > 0) && (i % MAX_ITEM_NUM == 0)) {
+							//append a new panel
+							newPanel = Ext.create('Ext.Panel', {
+								html: 'Added Panel'
+							});
+
+							launchscreen.add([newPanel]);
+
+							var nextIndex = launchscreen.getActiveIndex() + k;
+
+							k++;
+
+							actItem.setHtml(html);
+
+							html = "";
+
+							actItem = launchscreen.getAt(nextIndex);
+
+						}
+
+						html = html + tpl2.applyTemplate(results[i]);
+					}
+
+					actItem.setHtml(html);
+
+				} else {
+
+					console.log("No file data return !");
+					actItem.setHtml("Oops, No file found.");
+
+				}
+				//cancel the mask
 				if (page)
-						page.unmask();
-			} else {
-				alert('There was an error retrieving the weather.');
+					page.unmask();
+
 			}
+		});
 
-		}
-	});
-
-};
+	};
 
 var resortList = function() {
 	var navBar = Ext.getCmp("mainNestedList");

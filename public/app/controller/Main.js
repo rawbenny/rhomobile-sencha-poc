@@ -67,7 +67,7 @@ Ext.define('poc.controller.Main', {
 					}
 				});
 				nav.setStore(baseStore);
-				reloadFileList("/Shared Document", mainPage);
+				reloadFileList("/Shared Documents", mainPage);
 			},
 			failure:function(form,result){
 				Ext.Anim.run(fields, 'fade', {
