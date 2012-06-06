@@ -1,8 +1,8 @@
-rhodes_path='C:/RhoStudio/ruby/lib/ruby/gems/1.8/gems/rhodes-3.3.2'
+rhodes_path='/Library/Ruby/Gems/1.8/gems/rhodes-3.3.3'
 app_version='1.0'
 app_name='poc'
 reload_app_changes=1
 debug_port=
 debug_host='127.0.0.1'
 platform='iphone'
-ext_path=C:/RhoStudio/ruby/lib/ruby/gems/1.8/gems/rhodes-3.3.2/lib/extensions/set;C:/RhoStudio/ruby/lib/ruby/gems/1.8/gems/rhodes-3.3.2/lib/extensions/json;C:/RhoStudio/ruby/lib/ruby/gems/1.8/gems/rhodes-3.3.2/lib/extensions/net-http;C:/RhoStudio/ruby/lib/ruby/gems/1.8/gems/rhodes-3.3.2/lib/extensions/thread;C:/RhoStudio/ruby/lib/ruby/gems/1.8/gems/rhodes-3.3.2/lib/extensions/timeout;C:/RhoStudio/ruby/lib/ruby/gems/1.8/gems/rhodes-3.3.2/lib/extensions/uri;C:/RhoStudio/ruby/lib/ruby/gems/1.8/gems/rhodes-3.3.2/lib/extensions/rexml;
+ext_path=/Library/Ruby/Gems/1.8/gems/rhodes-3.3.3/lib/extensions/set;/Library/Ruby/Gems/1.8/gems/rhodes-3.3.3/lib/extensions/json;/Library/Ruby/Gems/1.8/gems/rhodes-3.3.3/lib/extensions/net-http;/Library/Ruby/Gems/1.8/gems/rhodes-3.3.3/lib/extensions/thread;/Library/Ruby/Gems/1.8/gems/rhodes-3.3.3/lib/extensions/timeout;/Library/Ruby/Gems/1.8/gems/rhodes-3.3.3/lib/extensions/uri;/Library/Ruby/Gems/1.8/gems/rhodes-3.3.3/lib/extensions/rexml;

@@ -13,8 +13,8 @@ class DocumentController < Rho::RhoController
            <soap:Header/>
            <soap:Body>
               <soap1:Login>
-                 <soap1:username>jqiao009</soap1:username>
-                 <soap1:password>pwccore@07</soap1:password>
+                 <soap1:username>doctester</soap1:username>
+                 <soap1:password>Pwcwelcome1</soap1:password>
               </soap1:Login>
            </soap:Body>
         </soap:Envelope>
