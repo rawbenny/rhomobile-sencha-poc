@@ -46,8 +46,8 @@ class SettingsController < Rho::RhoController
            <soap:Header/>
            <soap:Body>
               <soap1:Login>
-                 <soap1:username>doctester</soap1:username>
-                 <soap1:password>Pwcwelcome1</soap1:password>
+                 <soap1:username>#{name}</soap1:username>
+                 <soap1:password>#{password}</soap1:password>
               </soap1:Login>
            </soap:Body>
         </soap:Envelope>
@@ -55,11 +55,12 @@ class SettingsController < Rho::RhoController
         headers = {
           'Content-Type' => 'text/xml; charset=\"utf-8\"'
         }
-        http = Net::HTTP.new('sinw069070', 23456)
+        http = AppApplication.http
         path = '/_vti_bin/Authentication.asmx'
         resp, data = http.post(path, data, headers)
         cookie = resp.response['set-cookie'].split('; ')[0]
         @response['headers']['Content-Type']='application/json;charset=utf-8'
+        AppApplication.cookie = cookie
         render :string => '{success:true,cookie:"'+cookie+'"}' 
       rescue Rho::RhoError => e
         @msg = e.message

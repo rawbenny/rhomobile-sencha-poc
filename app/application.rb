@@ -1,4 +1,5 @@
 require 'rho/rhoapplication'
+require 'net/http'
 
 class AppApplication < Rho::RhoApplication
   def initialize
@@ -12,5 +13,21 @@ class AppApplication < Rho::RhoApplication
     # Uncomment to set sync notification callback to /app/Settings/sync_notify.
     # SyncEngine::set_objectnotify_url("/app/Settings/sync_notify")
     SyncEngine.set_notification(-1, "/app/Settings/sync_notify", '')
+    
+    # init HTTP 
+    @@http = Net::HTTP.new('sinw069070', 23456)
+    @@cookie = nil
+  end
+  
+  def self.http
+    @@http
+  end
+  
+  def self.cookie
+    @@cookie
+  end
+  
+  def self.cookie=(value)
+    @@cookie = value
   end
 end

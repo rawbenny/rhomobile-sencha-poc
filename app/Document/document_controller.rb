@@ -7,25 +7,10 @@ require 'rexml/document'
 include REXML
 class DocumentController < Rho::RhoController
   include BrowserHelper
+  
   def json
-    data = <<-EOF
-        <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:soap1="http://schemas.microsoft.com/sharepoint/soap/">
-           <soap:Header/>
-           <soap:Body>
-              <soap1:Login>
-                 <soap1:username>doctester</soap1:username>
-                 <soap1:password>Pwcwelcome1</soap1:password>
-              </soap1:Login>
-           </soap:Body>
-        </soap:Envelope>
-        EOF
-    headers = {
-      'Content-Type' => 'text/xml; charset=\"utf-8\"'
-    }
-    http = Net::HTTP.new('sinw069070', 23456)
-    path = '/_vti_bin/Authentication.asmx'
-    resp, data = http.post(path, data, headers)
-    cookie = resp.response['set-cookie'].split('; ')[0]
+    cookie = AppApplication.cookie
+    http = AppApplication.http
     path = @params['node']
     #the node parameter is like '/Shared Documents', '/Shared Documents/Test/a', it should be escaped before added to the url.
     #sample path:'/_vti_bin/ListData.svc/SharedDocuments?%24filter=Path+eq+%27%2FShared+Documents%27'
@@ -44,24 +29,8 @@ class DocumentController < Rho::RhoController
   end
 
   def files
-    data = <<-EOF
-        <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:soap1="http://schemas.microsoft.com/sharepoint/soap/">
-           <soap:Header/>
-           <soap:Body>
-              <soap1:Login>
-                 <soap1:username>doctester</soap1:username>
-                 <soap1:password>Pwcwelcome1</soap1:password>
-              </soap1:Login>
-           </soap:Body>
-        </soap:Envelope>
-        EOF
-    headers = {
-      'Content-Type' => 'text/xml; charset=\"utf-8\"'
-    }
     http = Net::HTTP.new('sinw069070', 23456)
-    path = '/_vti_bin/Authentication.asmx'
-    resp, data = http.post(path, data, headers)
-    cookie = resp.response['set-cookie'].split('; ')[0]
+    cookie = AppApplication.cookie
     path = @params['node']
     if path.nil? || path ===''
       path = '/Shared Documents' 
