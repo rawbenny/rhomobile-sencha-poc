@@ -5,6 +5,11 @@ sim-*
 
 # build output
 bin/
+<<<<<<< HEAD
 .svn/rhosimulator/Databases.db
 rhosimulator/qrc__0.localstorage
 rhosimulator/rholog.txt_pos
+=======
+.svn/
+public/styles/.sass-cache/
+>>>>>>> change ignore
