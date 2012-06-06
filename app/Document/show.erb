@@ -1,0 +1,69 @@
+<div data-role="page" data-add-back-btn="false">
+
+  <div data-role="header" data-position="inline">
+    <h1><%= @document.ows_DocIcon %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="arrow-l" data-direction="reverse">
+      Back
+    </a>
+    <a href="<%= url_for :action => :edit, :id => @document.object %>" class="ui-btn-right" data-icon="star">
+      Edit
+    </a>
+  </div>
+
+  <div data-role="content">
+    <ul data-role="listview">
+      
+          <li>
+            <div class="itemLabel">OwsDocIcon</div>
+            <div class="itemValue"><%= @document.ows_DocIcon %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">OwsFileRef</div>
+            <div class="itemValue"><%= @document.ows_FileRef %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">OwsFileLeafRef</div>
+            <div class="itemValue"><%= @document.ows_FileLeafRef %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">OwsUniqueId</div>
+            <div class="itemValue"><%= @document.ows_UniqueId %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">OwsID</div>
+            <div class="itemValue"><%= @document.ows_ID %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">Ows_Level</div>
+            <div class="itemValue"><%= @document.ows__Level %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">OwsApproved</div>
+            <div class="itemValue"><%= @document.ows_Approved %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">OwsEditor</div>
+            <div class="itemValue"><%= @document.ows_Editor %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">OwsModified</div>
+            <div class="itemValue"><%= @document.ows_Modified %></div>
+          </li>
+      
+          <li>
+            <div class="itemLabel">OwsLinkFilename</div>
+            <div class="itemValue"><%= @document.ows_LinkFilename %></div>
+          </li>
+      
+    </ul>
+  </div>
+
+</div>

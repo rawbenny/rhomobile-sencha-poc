@@ -1,0 +1,192 @@
+@import 'sencha-touch/default/all';
+
+$active-color:rgb(238,156,52);
+$base-color: rgb(243,188,135);
+$loading-spinner-color: rgb(215,64,33);
+$base-gradient:'glossy';
+$body-bg-color: lighten($base-color,50%);
+
+
+// You may remove any of the following modules that you
+// do not use in order to create a smaller css file.
+@include sencha-panel;
+@include sencha-buttons;
+@include sencha-sheet;
+@include sencha-picker;
+@include sencha-tabs;
+@include sencha-toolbar;
+@include sencha-toolbar-forms;
+@include sencha-indexbar;
+@include sencha-list;
+@include sencha-layout;
+@include sencha-carousel;
+@include sencha-form;
+@include sencha-msgbox;
+@include sencha-loading-spinner;
+
+@include sencha-toolbar-ui('yellow',rgb(215,64,33), 'bevel');
+
+// @include sencha-toolbar-ui('yellow',darken(rgb(215,64,33),10%), 'bevel'); 
+
+@include pictos-iconmask('time_repeat');
+@include pictos-iconmask('list');
+
+.login-page {
+  background-image: url(../images/pwc_background.png);
+  background-repeat:no-repeat;
+  background-position:center;
+  .x-form-fieldset-title, .login-page .x-form-fieldset-instructions{
+    color:white;
+  }
+  .x-translatable-container{
+    background-image: url(../images/pwc_background.png);
+    background-repeat:no-repeat;
+    background-position:center; 
+  }
+}
+
+.file-list-wrap{
+  ul {
+    display: inline;
+    text-align: center;
+    li {
+      display: block;
+      float: left;
+      padding-bottom: 0px;
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 20px;
+      width: 25%;
+      height: 180px;
+    }
+  }
+  .file-stack {
+    background-image: url(../images/FileIcon01.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-left: 10%;
+    margin-right: 10%;
+    position: relative;
+  }
+  .unknown-file {
+    background-image: url(../images/UnknownFile.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 130px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 20px;
+    width: 80%;
+  }
+  
+  .xlsx, .excel, .xls {
+    background-image: url("../images/ExcelIcon01.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 130px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 20px;
+    width: 80%;
+  }
+  .pdf {
+    background-image: url("../images/PDFIcon01.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 130px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 20px;
+    width: 80%;
+  }
+  .docx, .doc, .word {
+    background-image: url("../images/WordIcon01.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 130px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 20px;
+    width: 80%;
+  }
+  .pptx, .ppt, .powerpoint, .pps {
+    background-image: url("../images/PowerPointIcon01.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 130px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 20px;
+    width: 80%;
+  }
+  .gif, .png, .jpg, .psd, .max, .bmp, .tif, .svg {
+    background-image: url("../images/ImageIcon01.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 130px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 20px;
+    width: 80%;
+  }
+  .txt, .rtf, .log {
+    background-image: url("../images/TextIcon01.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 130px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 20px;
+    width: 80%;
+  }
+  .asf, .asx, .avi, .flv, .mov, .mp4, .mpg, .rm, .swf, .vob, .wmv {
+    background-image: url("../images/VideoIcon01.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 130px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 20px;
+    width: 80%;
+  }
+  .file-name {
+    // color: rgb(209,58,13) ;
+    color:darken($base-color,10%);
+    height:50px;
+    margin:0 auto;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .file-wrap{
+    position:relative;
+  }
+}
+.mainNestedList {
+  .x-list-item{
+    margin:0 auto;
+    width:150px;
+    background-image:url(../images/FolderImage01.png);
+    background-repeat:no-repeat;
+    background-position:center; 
+    .x-list-item-label{
+      text-align:center;
+      padding:90px 0 0 0;
+      border-bottom-width: 0px;
+    }
+  }
+  .x-toolbar-light{
+    background-image:-webkit-linear-gradient(top, #E05032, #CE3D20 30%, #AB331A 65%, #902B16);
+    background-color:#AB331A;
+  }
+  transition:width 2s ease;
+}
+
+.x-list-item:first-child .x-list-item-label{
+  border-bottom-width: 0px;
+}
+
+.x-list-item-label{
+  border-style:none;
+}

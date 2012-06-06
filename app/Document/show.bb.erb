@@ -1,0 +1,65 @@
+<div data-role="page" data-add-back-btn="true">
+
+  <div data-role="header" data-position="inline">
+    <%= link_to "Back", :action => :index %>
+    <h1><%= @document.ows_DocIcon %></h1>
+    <%= link_to "Edit", :action => :edit, :id => @document.object %>
+  </div>
+
+  <div data-role="content">
+    <table>
+      
+      <tr>
+    	<td class="itemLabel">OwsDocIcon</td>
+        <td class="itemValue"><%= @document.ows_DocIcon%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">OwsFileRef</td>
+        <td class="itemValue"><%= @document.ows_FileRef%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">OwsFileLeafRef</td>
+        <td class="itemValue"><%= @document.ows_FileLeafRef%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">OwsUniqueId</td>
+        <td class="itemValue"><%= @document.ows_UniqueId%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">OwsID</td>
+        <td class="itemValue"><%= @document.ows_ID%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">Ows_Level</td>
+        <td class="itemValue"><%= @document.ows__Level%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">OwsApproved</td>
+        <td class="itemValue"><%= @document.ows_Approved%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">OwsEditor</td>
+        <td class="itemValue"><%= @document.ows_Editor%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">OwsModified</td>
+        <td class="itemValue"><%= @document.ows_Modified%></td>
+      </tr>
+      
+      <tr>
+    	<td class="itemLabel">OwsLinkFilename</td>
+        <td class="itemValue"><%= @document.ows_LinkFilename%></td>
+      </tr>
+      
+    </table>
+  </div>
+
+</div>

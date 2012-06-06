@@ -1,0 +1,13 @@
+ .x-list-normal .x-list-item:first-child .x-list-item-label{
+	border-bottom-width: 0px;
+}
+.x-list-normal .x-list-item .x-list-item-label {
+  border-top: 0px solid #dedede;
+}
+/* line 179, ../../sdk/resources/themes/stylesheets/sencha-touch/default/widgets/_list.scss */
+.x-list-normal .x-list-item:last-child .x-list-item-label {
+  border-bottom: 0px solid #dedede;
+}
+.mainNestedList{
+	-webkit-transition: all 1s ease;
+}

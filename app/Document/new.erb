@@ -1,0 +1,70 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @document.title %></h1>
+    <a href="<%= url_for :action => :index %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @document.object %>"/>
+
+      
+          <div data-role="fieldcontain">
+            <label for="document[ows_DocIcon]" class="fieldLabel">Ows docicon</label>
+            <input type="text" id="document[ows_DocIcon]" name="document[ows_DocIcon]" <%= placeholder("Ows docicon") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="document[ows_FileRef]" class="fieldLabel">Ows fileref</label>
+            <input type="text" id="document[ows_FileRef]" name="document[ows_FileRef]" <%= placeholder("Ows fileref") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="document[ows_FileLeafRef]" class="fieldLabel">Ows fileleafref</label>
+            <input type="text" id="document[ows_FileLeafRef]" name="document[ows_FileLeafRef]" <%= placeholder("Ows fileleafref") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="document[ows_UniqueId]" class="fieldLabel">Ows uniqueid</label>
+            <input type="text" id="document[ows_UniqueId]" name="document[ows_UniqueId]" <%= placeholder("Ows uniqueid") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="document[ows_ID]" class="fieldLabel">Ows id</label>
+            <input type="text" id="document[ows_ID]" name="document[ows_ID]" <%= placeholder("Ows id") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="document[ows__Level]" class="fieldLabel">Ows  level</label>
+            <input type="text" id="document[ows__Level]" name="document[ows__Level]" <%= placeholder("Ows  level") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="document[ows_Approved]" class="fieldLabel">Ows approved</label>
+            <input type="text" id="document[ows_Approved]" name="document[ows_Approved]" <%= placeholder("Ows approved") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="document[ows_Editor]" class="fieldLabel">Ows editor</label>
+            <input type="text" id="document[ows_Editor]" name="document[ows_Editor]" <%= placeholder("Ows editor") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="document[ows_Modified]" class="fieldLabel">Ows modified</label>
+            <input type="text" id="document[ows_Modified]" name="document[ows_Modified]" <%= placeholder("Ows modified") %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="document[ows_LinkFilename]" class="fieldLabel">Ows linkfilename</label>
+            <input type="text" id="document[ows_LinkFilename]" name="document[ows_LinkFilename]" <%= placeholder("Ows linkfilename") %> />
+          </div>
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>
