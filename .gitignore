@@ -5,4 +5,6 @@ sim-*
 
 # build output
 bin/
-.svn/
+.svn/rhosimulator/Databases.db
+rhosimulator/qrc__0.localstorage
+rhosimulator/rholog.txt_pos
