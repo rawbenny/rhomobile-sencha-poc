@@ -32,20 +32,6 @@ Ext.define('poc.controller.Main', {
 
 		}
 	},
-	// onHide : function() {
-		// Ext.Anim.run(this.getNav(), 'slide', {
-			// direction : 'left',
-						// autoClear : true,
-			// duration : 200
-		// });
-	// },
-	// onShow : function() {
-		// Ext.Anim.run(this.getNav(), 'slide', {
-			// direction : 'right',
-						// autoClear : true,
-			// duration : 200
-		// });
-	// },
 	onLoginBtnTap : function(btn, e, eOpts) {
 		this.getLoginPage().setMasked({
 			xtype : 'loadmask',
@@ -81,7 +67,15 @@ Ext.define('poc.controller.Main', {
 					}
 				});
 				nav.setStore(baseStore);
-				reloadFileList("", mainPage);
+				reloadFileList("/Shared Document", mainPage);
+			},
+			failure:function(form,result){
+				Ext.Anim.run(fields, 'fade', {
+					out : false,
+					autoClear : false,
+					duration : 1000
+				});
+				fields.setInstructions('Failed to login. Please verify credentials and try again.');
 			}
 		});
 	},
@@ -95,6 +89,7 @@ Ext.define('poc.controller.Main', {
 			duration : 1000
 		});
 		sessionStorage.removeItem("cookie");
+		fields.setInstructions('Please enter your credentials');
 	},
 	onBackTap : function(list, item, lastList, cardActive, e) {
 		//abandon last item

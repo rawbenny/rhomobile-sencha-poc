@@ -37,6 +37,7 @@ class SettingsController < Rho::RhoController
   end
 
   def do_login
+    @response['headers']['Content-Type']='application/json;charset=utf-8'
     if @params['username'] and @params['password']
       begin
         name = (@params['username']);
@@ -58,17 +59,21 @@ class SettingsController < Rho::RhoController
         http = AppApplication.http
         path = '/_vti_bin/Authentication.asmx'
         resp, data = http.post(path, data, headers)
-        cookie = resp.response['set-cookie'].split('; ')[0]
-        @response['headers']['Content-Type']='application/json;charset=utf-8'
+        if resp.response['set-cookie']
+          cookie = resp.response['set-cookie'].split('; ')[0] 
+        else
+          raise Rho::RhoError, "Failed to login."
+        end
+        app_info(cookie)
         AppApplication.cookie = cookie
         render :string => '{success:true,cookie:"'+cookie+'"}' 
       rescue Rho::RhoError => e
         @msg = e.message
-        render :action => :login
+        render :string => '{success:false,msg:"'+@msg+'"}'
       end
     else
       @msg = Rho::RhoError.err_message(Rho::RhoError::ERR_UNATHORIZED) unless @msg && @msg.length > 0
-      render :action => :login
+      render :string => '{success:false,msg:"'+@msg+'"}'
     end
   end
 
